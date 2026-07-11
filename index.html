@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UAE Skin Microbiome Explorer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV BAR ============ -->
+<nav class="navbar">
+    <img src="/images/Dubai-police-logo-vector.png" alt="Dubai Police Logo" height="70">
+
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="database.html">Database</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <!--<li><a href="contact.html">Contact</a></li>-->
+    </ul>
+
+    <a href="about-project.html" class="btn-outline">Get Involved</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+    <div class="hero-text">
+        <h1 data-aos="fade-up">UAE SKIN MICROBIOME<br>EXPLORER</h1>
+        <div class="hero-divider"></div>
+        <p data-aos="fade-right" data-aos-delay="50">Exploring microbial diversity across the Emirates for
+           forensic and research advancement.</p>
+        <a href="database.html" class="btn-cta">EXPLORE DATABASE →</a>
+    </div>
+
+    <div class="hero-map">
+        <p class="map-hint">Hover over an emirate to view details</p>
+
+        <svg viewBox="0 0 500 500" class="uae-map">
+            <!-- Simplified, non-geographic emirate shapes for interaction demo -->
+            <polygon class="emirate" data-name="Ras Al Khaimah" data-samples="128"
+                points="220,40 300,30 320,90 240,100" />
+            <polygon class="emirate" data-name="Umm Al Quwain" data-samples="74"
+                points="210,100 260,95 270,140 220,145" />
+            <polygon class="emirate" data-name="Ajman" data-samples="96"
+                points="270,140 310,135 315,170 275,175" />
+            <polygon class="emirate" data-name="Sharjah" data-samples="612"
+                points="150,110 220,100 240,180 170,190" />
+            <polygon class="emirate" data-name="Dubai" data-samples="1245"
+                points="170,190 275,175 300,240 200,250" />
+            <polygon class="emirate" data-name="Fujairah" data-samples="210"
+                points="315,170 360,180 350,250 300,240" />
+            <polygon class="emirate" data-name="Abu Dhabi" data-samples="1782"
+                points="60,250 200,250 260,400 80,420" />
+        </svg>
+
+        <div class="map-info" id="mapInfo">
+            <span class="map-info-name">Dubai</span>
+            <span class="map-info-count">1,245</span>
+            <span class="map-info-label">Samples</span>
+        </div>
+    </div>
+</header>
+
+<!-- ============ DIVERSITY BAND ============ -->
+<section class="diversity">
+    <img src="/images/icon-people.png" alt="Icon" height="170">
+    <div class="diversity-text">
+        <h2 data-aos="fade-up">A NATION OF DIVERSITY,<br>REFLECTED IN OUR MICROBIOME</h2>
+        <p data-aos="fade-right" data-aos-delay="400">The UAE is home to 200+ nationalities, each bringing unique
+           microbial signatures. Explore the unseen diversity that
+           connects us all.</p>
+    </div>
+    
+    <div class="diversity-stat">
+    <span class="stat-number" id="natCounter">0</span>
+    <span class="stat-label">NATIONALITIES</span>
+</div>
+
+    <div class="skyline-frame">
+    <img src="/images/Dubai-skyline.png" alt="Dubai Skyline with Burj Khalifa">
+</div>
+</section>
+
+<!-- ============ DATABASE SEARCH ============ -->
+<section class="database-search">
+
+    <div class="search-panel"  data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0">
+        <h3>SEARCH THE MICROBIOME DATABASE</h3>
+
+        <label>
+            <div class="filter-icon"></div><i class="fa-solid fa-hand" ></i>
+            Body Site
+            <select>
+                <option>Palm</option>
+                <option>Forearm</option>
+                <option>Finger</option>
+            </select>
+        </label>
+
+        <label>
+            <div class="filter-icon"></div><i class="fa-solid fa-user" ></i>
+            Sex
+            <select>
+                <option>All</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </label>
+
+        <label>
+            <div class="filter-icon"></div><i class="fa-solid fa-map-pin"></i>
+            Emirate
+            <select>
+                <option>Dubai</option>
+                <option>Abu Dhabi</option>
+                <option>Sharjah</option>
+                <option>Ajman</option>
+                <option>Ras Al Khaimah</option>
+                <option>Fujairah</option>
+                <option>Umm Al Quwain</option>
+        
+            </select>
+        </label>
+
+        <label>
+            <div class="filter-icon"></div><i class="fa-solid fa-globe"></i>
+            Nationality
+            <select>
+                <option>All</option>
+                <option>Emirati</option>
+                <option>Indian</option>
+                <option>Pakistani</option>
+                <option>Filipino</option>
+                <option>British</option>
+                <option>American</option>
+                <option>Chinese</option>
+
+            </select>
+        </label>
+
+       <button class="btn-search">
+        <i class="fa-solid fa-magnifying-glass"></i> SEARCH
+        </button>
+
+        <button class="btn-reset">
+        <i class="fa-solid fa-arrows-rotate"></i> RESET FILTERS
+        </button>
+    </div>
+
+    <div class="results-panel" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
+
+        <h3>RESULTS (1,245 SAMPLES)</h3>
+        <div class="results-tabs">
+            <span class="tab active">Microbial Profile</span>
+            <span class="tab">Sample Details</span>
+            <span class="tab">Demographics</span>
+            <span class="tab">Download</span>
+        </div>
+
+        <div class="results-body">
+            <div class="chart-placeholder">
+                <p>All Bacteria</p>
+                <span>(Krona-style sunburst chart goes here)</span>
+            </div>
+
+            <div class="taxonomy-list">
+                <h4>TAXONOMIC SUMMARY</h4>
+                <ul>
+                    <li><span class="dot dot1"></span> Firmicutes <b>38.6%</b></li>
+                    <li><span class="dot dot2"></span> Actinobacteriota <b>24.3%</b></li>
+                    <li><span class="dot dot3"></span> Proteobacteria <b>18.7%</b></li>
+                    <li><span class="dot dot4"></span> Bacteroidota <b>9.5%</b></li>
+                    <li><span class="dot dot5"></span> Cyanobacteria <b>4.2%</b></li>
+                    <li><span class="dot dot6"></span> Others <b>4.7%</b></li>
+                </ul>
+                <button class="btn-outline-full">VIEW AS KRONA PLOT ↗</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="features">
+    <div class="feature" data-aos="zoom-in">
+        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h4>FORENSIC APPLICATIONS</h4>
+        <p>Supporting advanced forensic investigations using microbial signatures.</p>
+    </div>
+    <div class="feature" data-aos="zoom-in" data-aos-delay="100">
+        <div class="feature-icon"><i class="fa-solid fa-microscope"></i></div>
+        <h4>SCIENTIFIC RESEARCH</h4>
+        <p>Contributing to global microbiome research and knowledge.</p>
+    </div>
+    <div class="feature" data-aos="zoom-in" data-aos-delay="200">
+        <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+        <h4>DIVERSITY & INCLUSION</h4>
+        <p>Representing 200+ nationalities and their unique microbial identities.</p>
+    </div>
+    <div class="feature" data-aos="zoom-in" data-aos-delay="300">
+        <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+        <h4>PRIVACY PROTECTED</h4>
+        <p>All data is anonymized and handled with the highest confidentiality.</p>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+    <img src="/images/Dubai-police-logo-white.png" alt="Dubai Police Logo" height="60">
+
+    <div class="footer-text">
+        <p><b>UAE Skin Microbiome Explorer</b></p>
+        <p>This website is a demonstration prototype developed for research and presentation purposes only.</p> <br>
+        <p>Dubai Police – General Department of Forensic Science and Criminology</p>
+        <p>© 2024 All Rights Reserved.</p>
+
+    </div>
+
+    <div class="footer-socials">
+        <a href="#">in</a>
+        <a href="#">𝕏</a>
+        <a href="#">◎</a>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
+
+</body>
+</html>

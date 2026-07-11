@@ -1,0 +1,376 @@
+/* ============ DATABASE HERO ============ */
+.db-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background-color: var(--beige, #eae2d2);
+    padding: 60px 80px;
+    overflow: hidden;
+}
+
+.db-hero-text {
+    max-width: 520px;
+    flex-shrink: 0;
+}
+
+.db-hero-text h1 {
+    color: var(--dark-green, #004a2e);
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.db-hero-text p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.skyline-image {
+    width: 420px;
+    height: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.skyline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============ STATS BAND ============ */
+.db-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 40px 80px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #e0ddd3;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: left;
+}
+
+.stat-icon {
+    font-size: 26px;
+    color: var(--primary-green, #018558);
+    margin-bottom: 14px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-green, #004a2e);
+}
+
+.stat-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.stat-desc {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ============ DATABASE OVERVIEW ============ */
+.db-overview {
+    margin: 0 80px 40px;
+    background: #fff;
+    border: 1px solid #e0ddd3;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.db-overview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.db-overview-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.db-overview-icon {
+    font-size: 28px;
+    color: var(--primary-green, #018558);
+}
+
+.db-overview-title h2 {
+    color: var(--dark-green, #004a2e);
+    margin: 0;
+}
+
+.db-overview-title p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.db-overview-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.db-search {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-width: 260px;
+}
+
+.btn-filter, .btn-export {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-export {
+    background: var(--dark-green, #004a2e);
+    color: #fff;
+    border: none;
+}
+
+.db-table-wrapper {
+    overflow-x: auto;
+}
+
+.db-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.db-table th,
+.db-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+}
+
+.db-table thead tr:first-child th {
+    background: var(--dark-green, #004a2e);
+    color: #fff;
+}
+
+.db-table thead tr:nth-child(2) th {
+    background: var(--primary-green, #018558);
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+.species-header {
+    text-align: center;
+}
+
+.db-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.db-pagination-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.db-pagination-controls button {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.db-pagination-controls button.active {
+    background: var(--dark-green, #004a2e);
+    color: #fff;
+    border-color: var(--dark-green, #004a2e);
+}
+
+/* ============ DATA HIGHLIGHTS ============ */
+.db-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 0 80px 40px;
+}
+
+.highlight-card {
+    background: #fff;
+    border: 1px solid #e0ddd3;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.highlight-card h3 {
+    color: var(--dark-green, #004a2e);
+    margin-bottom: 16px;
+}
+
+/* Emirates card: list on the left, map graphic on the right */
+.highlight-card:has(.emirate-graphic) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    column-gap: 16px;
+}
+
+.highlight-card:has(.emirate-graphic) h3 {
+    grid-column: 1 / -1;
+}
+
+.emirate-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.emirate-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+}
+
+.emirate-graphic {
+    width: 150px;
+    height: 190px;
+    flex-shrink: 0;
+}
+
+.emirate-graphic img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.pin-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    color: var(--primary-green, #018558);
+}
+
+/* Body sites card: graphic above the row of labels */
+.highlight-center {
+    display: flex;
+    flex-direction: column;
+}
+
+.body-sites-graphic {
+    order: 1;
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 16px;
+}
+
+.body-sites-row {
+    order: 2;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.diverse-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+.globe-icon {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+}
+
+.globe-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.diverse-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-green, #018558);
+}
+
+.diverse-desc {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ============ PRIVACY BAND ============ */
+.db-privacy {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: var(--beige, #eae2d2);
+    margin: 0 80px 60px;
+    padding: 30px 40px;
+    border-radius: 12px;
+}
+
+.privacy-icon {
+    font-size: 35px;
+    flex-shrink: 0;
+    color: var(--primary-green, #018558);
+}
+
+.privacy-text h3 {
+    color: var(--dark-green, #004a2e);
+    margin-bottom: 8px;
+}
+
+.privacy-text p {
+    color: #333;
+    margin: 0;
+}
+
+.privacy-graphic {
+    width: 120px;
+    height: 80px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .db-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .db-highlights {
+        grid-template-columns: 1fr;
+    }
+    .db-hero, .db-stats, .db-overview, .db-highlights, .db-privacy {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

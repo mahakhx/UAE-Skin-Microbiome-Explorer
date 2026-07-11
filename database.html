@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UAE Skin Microbiome Explorer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="database-additions.css">
+</head>
+<body>
+
+
+<!-- ============ NAV BAR ============ -->
+<nav class="navbar">
+    <a href="index.html" target="_self">
+        <img src="/images/Dubai-police-logo-vector.png" alt="Dubai Police Logo" height="70">
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="database.html">Database</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <!--<li><a href="contact.html">Contact</a></li>-->
+    </ul>
+
+    <a href="about-project.html" class="btn-outline">Get Involved</a>
+</nav>
+
+
+<!-- ============ DATABASE HERO ============ -->
+<section class="db-hero">
+    <div class="db-hero-text">
+        <h1 data-aos="fade-up">Our Database</h1>
+        <p data-aos="fade-right" data-aos-delay="50">A growing microbiome resource built for the UAE.<br>Diverse. Representative. Future-ready.</p>
+    </div>
+    <div class="skyline-image">
+    <img src="/images/Dubai-skyline-3.jpg" alt=" Dubai Skyline" data-aos="fade-left" data-aos-delay="100">
+    </div>
+</section>
+
+
+<!-- ============ STATS BAND ============ -->
+<section class="db-stats">
+    <div class="stat-card"data-aos="zoom-in">
+        <div class="stat-icon"><i class="fa-solid fa-map"></i></div>
+        <div class="stat-number" data-stat="emirates">7</div>
+        <div class="stat-label">Emirates</div>
+        <p class="stat-desc">Data collected from all 7 emirates</p>
+    </div>
+    <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="stat-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+        <div class="stat-number" data-stat="samples">1,245</div>
+        <div class="stat-label">Samples</div>
+        <p class="stat-desc">High-quality microbiome samples</p>
+    </div>
+    <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="stat-icon"><i class="fa-solid fa-hand"></i></div>
+        <div class="stat-number" data-stat="body-sites">3</div>
+        <div class="stat-label">Body Sites</div>
+        <p class="stat-desc">Palm &bull; Finger &bull; Forearm</p>
+    </div>
+    <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="stat-number" data-stat="nationalities">200+</div>
+        <div class="stat-label">Nationalities</div>
+        <p class="stat-desc">Representing the rich diversity of the UAE</p>
+    </div>
+    <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+        <div class="stat-icon"><i class="fa-solid fa-dna"></i></div>
+        <div class="stat-number" data-stat="sequences">100K+</div>
+        <div class="stat-label">Sequences</div>
+        <p class="stat-desc">High-throughput 16S rRNA sequencing</p>
+    </div>
+</section>
+
+
+<!-- ============ DATABASE OVERVIEW ============ -->
+<section class="db-overview" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
+
+    <div class="db-overview-header">
+        <div class="db-overview-title">
+            <div class="db-overview-icon"><i class="fa-solid fa-database"></i></div>
+            <div>
+                <h2>Database Overview</h2>
+                <p>Explore our anonymized microbiome dataset.</p>
+            </div>
+        </div>
+
+        <div class="db-overview-controls">
+            <input type="text" class="db-search" placeholder="Search sample ID, nationality, emirate...">
+            <button class="btn-filter">Filters</button>
+            <button class="btn-export"><i class="fa-solid fa-download"></i> Export CSV</button>
+        </div>
+    </div>
+
+    <div class="db-table-wrapper">
+        <table class="db-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Sample ID</th>
+                    <th rowspan="2">Body Site</th>
+                    <th rowspan="2">Emirate</th>
+                    <th rowspan="2">Gender</th>
+                    <th rowspan="2">Nationality</th>
+                    <th colspan="5" class="species-header">Bacterial Species (Relative Abundance %)</th>
+                </tr>
+                <tr>
+                    <th>Staphylococcus epidermidis</th>
+                    <th>Corynebacterium spp.</th>
+                    <th>Cutibacterium acnes</th>
+                    <th>Micrococcus luteus</th>
+                    <th>&hellip;</th>
+                </tr>
+            </thead>
+            <tbody id="db-table-body">
+                <!-- Sample rows will be populated here via script.js -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="db-pagination">
+        <span id="db-pagination-summary">Showing 0 of 0 samples</span>
+        <div class="db-pagination-controls" id="db-pagination-controls">
+            <!-- Pagination buttons will be populated here via script.js -->
+        </div>
+    </div>
+</section>
+
+
+<!-- ============ DATA HIGHLIGHTS (3-column) ============ -->
+<section class="db-highlights">
+    <div class="highlight-card" data-aos="fade-up"
+     data-aos-duration="1000">
+
+        <h3>Data from All 7 Emirates</h3>
+        <ul class="emirate-list">
+            <li><span class="pin-icon"><i class="fa-solid fa-location-dot"></i></span>Abu Dhabi</li>
+            <li><span class="pin-icon"><i class="fa-solid fa-location-dot"></i></span>Dubai</li>
+            <li><span class="pin-icon"><i class="fa-solid fa-location-dot"></i></span>Sharjah</li>
+            <li><span class="pin-icon"><i class="fa-solid fa-location-dot"></i></span>Ajman</li>
+            <li><span class="pin-icon"><i class="fa-solid fa-location-dot"></i></span>Ras Al Khaimah</li>
+            <li><span class="pin-icon"><i class="fa-solid fa-location-dot"></i></span>Fujairah</li>
+            <li><span class="pin-icon"><i class="fa-solid fa-location-dot"></i></span>Umm Al Quwain</li>
+        </ul>
+        <div class="emirate-graphic">
+        <img src="/images/uae-map-pins.png" alt="Map of the UAE">
+        </div>
+    </div>
+
+    <div class="highlight-card highlight-center" data-aos="fade-up"
+     data-aos-duration="1000">
+        <h3>3 Body Sites Sampled</h3>
+        <div class="body-sites-row">
+            <div class="body-site">
+                <p>Palm</p>
+            </div>
+            <div class="body-site">
+                <p>Finger</p>
+            </div>
+            <div class="body-site">
+                <p>Forearm</p>
+            </div>
+        </div>
+        <img src="/images/bodysites-icon.png" alt="Hand and Forearm Illustration" class="body-sites-graphic">
+    </div>
+
+    <div class="highlight-card" data-aos="fade-up"
+     data-aos-duration="1000">
+        <h3>A Truly Diverse Dataset</h3>
+        <div class="diverse-content">
+            <div class="globe-icon"><img src="/images/globe-clear.png" alt="Globe Icon"></div>
+            <div>
+                <div class="diverse-number" data-stat="nationalities-2">200+</div>
+                <p>Nationalities</p>
+                <p class="diverse-desc">Uniting communities through science</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============ PRIVACY BAND ============ -->
+<section class="db-privacy" data-aos="zoom-in" 
+     data-aos-easing="ease-in-back"
+     data-aos-delay="50"
+     data-aos-offset="0">
+    <div class="privacy-icon"><i class="fa-solid fa-file-shield"></i></div>
+    <div class="privacy-text">
+        <h3>Privacy &amp; Data Integrity</h3>
+        <p>All data is anonymized and stored securely. We are committed to ethical research and protecting the privacy of every participant.</p>
+    </div>
+    <div class="privacy-graphic"><!-- graphic goes here later --></div>
+</section>
+
+
+
+
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+    <img src="/images/Dubai-police-logo-white.png" alt="Dubai Police Logo" height="60">
+
+    <div class="footer-text">
+        <p><b>UAE Skin Microbiome Explorer</b></p>
+        <p>This website is a demonstration prototype developed for research and presentation purposes only.</p> <br>
+        <p>Dubai Police – General Department of Forensic Science and Criminology</p>
+        <p>© 2024 All Rights Reserved.</p>
+
+    </div>
+
+    <div class="footer-socials">
+        <a href="#">in</a>
+        <a href="#">𝕏</a>
+        <a href="#">◎</a>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="database-table.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
+
+</body>
+</html>
