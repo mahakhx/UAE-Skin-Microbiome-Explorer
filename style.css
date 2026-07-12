@@ -637,6 +637,8 @@ ul {
     width: 100%;
     height: auto;
     display: block;
+    filter: drop-shadow(0 0 3px rgba(234, 226, 210, 0.8)) 
+            drop-shadow(0 0 20px rgba(234, 226, 210, 0.4));
 }
 
 .hero-map {
