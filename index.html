@@ -22,7 +22,7 @@
         <!--<li><a href="contact.html">Contact</a></li>-->
     </ul>
 
-    <a href="#" class="btn-outline">Get Involved</a>
+    <a class="btn-outline" disabled >Get Involved</a>
 </nav>
 
 <!-- ============ HERO ============ -->
@@ -36,10 +36,10 @@
     </div>
 
     <div class="hero-map">
-        <p class="map-hint">Hover over an emirate to view details</p>
+        <p class="map-hint">Click an emirate to view details</p>
 
+        <!-- OLD SVG MAP — kept here commented out in case the image version doesn't look right.
         <svg viewBox="0 0 500 500" class="uae-map">
-            <!-- Simplified, non-geographic emirate shapes for interaction demo -->
             <polygon class="emirate" data-name="Ras Al Khaimah" data-samples="128"
                 points="220,40 300,30 320,90 240,100" />
             <polygon class="emirate" data-name="Umm Al Quwain" data-samples="74"
@@ -55,6 +55,20 @@
             <polygon class="emirate" data-name="Abu Dhabi" data-samples="1782"
                 points="60,250 200,250 260,400 80,420" />
         </svg>
+        -->
+
+        <!-- TRIAL: image-based map with clickable pins. Remove this div and un-comment the SVG above to revert. -->
+        <div class="hero-map-image">
+            <img src="images/uae-map-emirates.png" alt="Map of the UAE emirates">
+
+            <button class="map-pin" data-name="Ras Al Khaimah" data-samples="128" style="left:78%; top:8%;"></button>
+            <button class="map-pin" data-name="Umm Al Quwain" data-samples="74" style="left:74%; top:15%;"></button>
+            <button class="map-pin" data-name="Ajman" data-samples="96" style="left:71%; top:19%;"></button>
+            <button class="map-pin" data-name="Sharjah" data-samples="612" style="left:77%; top:23%;"></button>
+            <button class="map-pin" data-name="Fujairah" data-samples="210" style="left:82%; top:16%;"></button>
+            <button class="map-pin" data-name="Dubai" data-samples="1245" style="left:69%; top:34%;"></button>
+            <button class="map-pin" data-name="Abu Dhabi" data-samples="1782" style="left:51%; top:75%;"></button>
+        </div>
 
         <div class="map-info" id="mapInfo">
             <span class="map-info-name">Dubai</span>

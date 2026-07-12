@@ -15,6 +15,18 @@ emirates.forEach((shape) => {
     });
 });
 
+/* TRIAL: click handling for image-based map pins */
+const mapPins = document.querySelectorAll('.map-pin');
+
+mapPins.forEach((pin) => {
+    pin.addEventListener('click', () => {
+        mapPins.forEach((p) => p.classList.remove('is-active'));
+        pin.classList.add('is-active');
+
+        infoName.textContent = pin.dataset.name;
+        infoCount.textContent = Number(pin.dataset.samples).toLocaleString();
+    });
+});
 
 /* ===== Nationality Counter Animation (smooth) ===== */
 const natCounter = document.getElementById('natCounter');

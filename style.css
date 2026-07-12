@@ -603,3 +603,64 @@ ul {
     }
     .hero-text h1 { font-size: 30px; }
 }
+
+/* TRIAL: microbiome texture layered behind hero content — delete this block to revert */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('images/microbiome-bg.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    z-index: 0;
+}
+
+.hero-text,
+.hero-map {
+    position: relative;
+    z-index: 1;
+}
+
+/* TRIAL: image-based map + pins — delete this block to revert */
+.hero-map-image {
+    position: relative;
+    width: 100%;
+}
+
+.hero-map-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-map {
+    position: relative;
+    flex: 1;
+    min-width: 340px;
+    max-width: 580px;
+}
+
+.map-pin {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    background-color: var(--beige);
+    border: 2px solid var(--green-dark);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.map-pin:hover,
+.map-pin.is-active {
+    background-color: var(--green-primary);
+    transform: translate(-50%, -50%) scale(1.4);
+}
