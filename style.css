@@ -440,7 +440,7 @@ ul {
     flex: 1;
     min-width: 220px;
     aspect-ratio: 1;
-    border: 2px dashed #ddd;
+    
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -456,6 +456,14 @@ ul {
     font-weight: 700;
     color: var(--green-dark);
     margin-bottom: 6px;
+}
+
+/* TRIAL: image fills the circular placeholder */
+.chart-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
 }
 
 .taxonomy-list {
@@ -637,7 +645,7 @@ ul {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 0 3px rgba(234, 226, 210, 0.8)) 
+     filter: drop-shadow(0 0 3px rgba(234, 226, 210, 0.8)) 
             drop-shadow(0 0 20px rgba(234, 226, 210, 0.4));
 }
 
@@ -665,4 +673,14 @@ ul {
 .map-pin.is-active {
     background-color: var(--green-primary);
     transform: translate(-50%, -50%) scale(1.4);
+}
+
+@media (max-width: 768px) {
+    .navbar { flex-wrap: wrap; gap: 12px; }
+    .nav-links { order: 3; width: 100%; justify-content: space-between; overflow-x: auto; }
+    .hero, .diversity, .database-search, .features, .site-footer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .hero-text h1 { font-size: 30px; }
 }
