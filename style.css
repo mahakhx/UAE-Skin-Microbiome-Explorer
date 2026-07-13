@@ -133,6 +133,17 @@ ul {
     letter-spacing: 1px;
     margin-bottom: 20px;
 }
+.diversity {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skyline-frame {
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+        aspect-ratio: 380 / 340;
+    }
 
 .hero-divider {
     width: 60px;
