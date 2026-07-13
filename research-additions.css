@@ -80,6 +80,12 @@
     background: var(--beige);
 }
 
+.research-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 /* ---------- Research Areas ---------- */
 .research-areas {
     max-width: 1300px;
@@ -259,6 +265,25 @@
     .research-hero {
         flex-direction: column;
         padding: 60px 24px;
+    }
+
+    .research-areas-grid,
+    .publications-grid,
+    .research-goals-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .research-hero {
+        flex-direction: column;
+        padding: 60px 24px;
+    }
+
+    .research-hero-text,
+    .research-hero-image {
+        max-width: 100%;
+        width: 100%;
     }
 
     .research-areas-grid,
