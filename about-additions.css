@@ -187,3 +187,27 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 900px) {
+    .about-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 24px 100px;
+    }
+
+    .about-hero-text {
+        max-width: 100%;
+    }
+
+    .about-hero-image {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        aspect-ratio: 6 / 5;
+        margin: 0 auto;
+    }
+
+    .mission-cards {
+        grid-template-columns: 1fr;
+    }
+}
