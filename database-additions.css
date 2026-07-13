@@ -374,3 +374,102 @@
         padding-right: 20px;
     }
 }
+
+/* ============ MOBILE (PHONE) FIXES ============ */
+@media (max-width: 600px) {
+    /* --- Hero --- */
+    .db-hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .db-hero-text {
+        max-width: 100%;
+    }
+
+    .db-hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .skyline-image {
+        width: 100%;
+        max-width: 420px;
+        height: 200px;
+    }
+
+    /* --- Stats band --- */
+    .db-stats {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+
+    /* --- Overview panel --- */
+    .db-overview {
+        margin: 0 20px 30px;
+        padding: 16px;
+    }
+
+    .db-overview-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .db-overview-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .db-search {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .btn-filter, .btn-export {
+        width: 100%;
+        text-align: center;
+    }
+
+    .db-pagination {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* --- Highlights --- */
+    .db-highlights {
+        margin: 0 20px 30px;
+    }
+
+    .highlight-card:has(.emirate-graphic) {
+        grid-template-columns: 1fr;
+    }
+
+    .emirate-graphic {
+        width: 120px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    .body-sites-graphic {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+    }
+
+    .diverse-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* --- Privacy band --- */
+    .db-privacy {
+        flex-direction: column;
+        text-align: center;
+        margin: 0 20px 40px;
+        padding: 24px 20px;
+    }
+
+    .privacy-graphic {
+        display: none; /* placeholder is empty until image is added — hiding avoids the lopsided margin-left:auto gap on mobile */
+    }
+}
